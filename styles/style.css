@@ -2,67 +2,170 @@
 
 
 /* Give the header element a background color */
-
+header {
+   background-color:rgb(99, 214, 238);
+}
 
 /* Center everything in the header and footer */
-
+header, footer {
+   text-align: center;
+   /* background-color: pink; */
+}
 
 /* All text to Helvetica */
+/* body {
+   font-family: Helvetica;
+} */
 
-
+* {
+   font-family: Helvetica;
+}
 /* All links default color is gray*/
 
+a {
+   color:gray;
+}
 
 /* All links on hover color red*/
 
+a:hover {
+   color: red;
+}
 
 /* All Links visited color black*/
-
+a:visited {
+    color: black;
+}
 
 /* Footer disclaimer text to be .5 em*/
+/* footer #disclaimer {
+   font-size: 0.5em;
+} */
 
+#disclaimer {
+   font-size: 0.5em;
+}
 
 /* Remove bullet points from header navigation links */
 
+/* header nav li {
+   /* background-color: pink; */
+   /* list-style-type: none;
+} */ 
+
+/* header li {
+   /* list-style-type: none;
+}  */
+
+/* header ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+
+} */
+
+/* Did footer as well because it looked odd. Also fixed the spacing */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
 /* All Post's Comment Links Italicized, Orange and Remove the Underline */
-
+[href="#comments"]{
+   /* remove underline */
+   text-decoration: none;
+   font-style: italic;
+   color:orange;
+}
 
 /* All Post's Comment Links Show Underline on Hover */
 
+/* The color of comments becomes backs after this */
+[href="#comments"]:hover {
+   text-decoration: underline;
+}
 
 /* All Post's Author's Links Bold and Blue, with no Underline */
 
+/* Color is still black */
+article h3 a {
+   font-weight: bold;
+   color:blue;
+   text-decoration: none;
+}
 
 /* Article Paragraph Text should have line height of 200% */
-
+/* relationship selector */
+article p {
+   line-height: 200%;
+}
 
 /* The First Letter of each Article be 2em */
+/* section p:first-of-type:first-letter{
+   /* background-color: green; */
+   /* font-size: 2em;
+}  */
 
+article::first-letter {
+    /* pseudo element */
+    font-size: 2em;
+}
 
 /* The First Image in every Article should have Rounded Corners*/
-
+article img:first-of-type {
+    border-radius: 50px;
+}
 
 /* The First Top Cat Section (check the bottom of the HTML file) should have a Golden Background */
 
+/* both works */
+/* aside section:first-of-type {
+   background-color: gold;
+} */
+
+#top-cats section:nth-of-type(1) {
+    background-color: gold;
+}
 
 /* The 2nd Top Cat Section Should have a Silver/gray Background */
+#top-cats section:nth-of-type(2) {
+   background-color: silver;
+}
 
 /* The 3rd-Most Top Cat Should have a Bronze/brown Background
    Note: the HTML for this one is a little odd! This is intentional! */
 
-/* Every other Article's Post-Content Background Color to a Light Grey */
+/* the sibling section after top-cats */
+#top-cats~section {
+    background-color: brown;
+}
 
+/* Every other Article's Post-Content Background Color to a Light Grey */
+article:nth-of-type(2n) .post-content {
+    background-color: lightgray;
+}
 
 /* All Top Kitten's Profile Photos Rounded */
-
+#top-cats img,
+#top-cats~section img{
+   border-radius: 50px;
+}
 
 /* ** BONUS ** */
 
 /* Add a cat emoji before a Cat's Name (in the heading content)*/
-
+article h3 a::before {
+    content: "🐱";
+}
 
 /* Top-most Top Cat has a trophy emoji before name */
-
+#top-cats section:nth-of-type(1) h3::before {
+    content: "🏆";
+}
 
 /* Use Google Fonts to change h1 & h2 fonts to Roboto Slab */
+h1,
+h2 {
+    font-family: "Roboto Slab", serif;
+}
